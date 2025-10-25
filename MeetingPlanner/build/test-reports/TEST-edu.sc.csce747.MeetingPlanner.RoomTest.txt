@@ -1,0 +1,6 @@
+Testsuite: edu.sc.csce747.MeetingPlanner.RoomTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 sec
+
+Testcase: testPrintAgendaDoesNotThrow took 0.012 sec
+Testcase: testAddMeetingConflict took 0.014 sec
+Testcase: testIsBusyReturnsTrue took 0.001 sec
