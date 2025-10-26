@@ -1,6 +1,5 @@
 <project name="MeetingPlanner" default="all" basedir=".">
 
-	<!-- Directories -->
 	<property name="src.dir" value="src/main/java" />
 	<property name="test.dir" value="src/test/java" />
 	<property name="build.dir" value="build" />
@@ -9,26 +8,22 @@
 	<property name="doc.dir" value="doc" />
 	<property name="lib.dir" value="lib" />
 
-	<!-- Classpath for compilation -->
 	<path id="compile.classpath">
 		<fileset dir="${lib.dir}">
 			<include name="**/*.jar" />
 		</fileset>
 	</path>
 
-	<!-- Clean target -->
 	<target name="clean">
 		<delete dir="${build.dir}" />
 		<delete dir="${doc.dir}" />
 	</target>
 
-	<!-- Compile main sources -->
 	<target name="compile">
 		<mkdir dir="${classes.dir}" />
 		<javac srcdir="${src.dir}" destdir="${classes.dir}" includeantruntime="false" classpathref="compile.classpath" />
 	</target>
 
-	<!-- Compile test sources -->
 	<target name="compile-tests" depends="compile">
 		<mkdir dir="${test.classes.dir}" />
 		<javac srcdir="${test.dir}" destdir="${test.classes.dir}" includeantruntime="false">
@@ -39,13 +34,11 @@
 		</javac>
 	</target>
 
-	<!-- Generate Javadoc -->
 	<target name="javadoc" depends="compile">
 		<mkdir dir="${doc.dir}" />
 		<javadoc sourcepath="${src.dir}" destdir="${doc.dir}" classpathref="compile.classpath" author="true" version="true" />
 	</target>
 
-	<!-- Run unit tests -->
 	<target name="test" depends="compile-tests">
 		<mkdir dir="${build.dir}/test-reports" />
 		<junit printsummary="yes" haltonfailure="yes" fork="yes">
@@ -63,7 +56,6 @@
 		</junit>
 	</target>
 
-	<!-- Default target -->
 	<target name="all" depends="clean, compile, compile-tests, test, javadoc" />
 
 </project>

@@ -25,9 +25,9 @@ public class RoomTest {
 
 			Meeting m2 = new Meeting(2, 20, 10, 12, new ArrayList<>(), room, "Meeting 2");
 			room.addMeeting(m2);
-			fail("Expected TimeConflictException was not thrown for overlapping meeting");
+
 		} catch (TimeConflictException e) {
-			// Exception гарсан тул тест pass
+			fail("Expected TimeConflictException was not thrown for overlapping meeting");
 		} catch (Exception e) {
 			fail("Unexpected exception: " + e.getMessage());
 		}

@@ -19,9 +19,9 @@ public class OrganizationTest {
 	public void testGetInvalidRoom() {
 		try {
 			org.getRoom("999X");
-			fail("Expected Exception was not thrown for invalid room");
+
 		} catch (Exception e) {
-			// Exception гарсан тул тест pass
+			fail("Expected Exception was not thrown for invalid room");
 		}
 	}
 
@@ -29,9 +29,9 @@ public class OrganizationTest {
 	public void testGetInvalidEmployee() {
 		try {
 			org.getEmployee("Unknown Person");
-			fail("Expected Exception was not thrown for invalid employee");
+
 		} catch (Exception e) {
-			// Exception гарсан тул тест pass
+			fail("Expected Exception was not thrown for invalid employee");
 		}
 	}
 
